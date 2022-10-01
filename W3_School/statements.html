@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+
+    <h2>javaScript code blocks are written between { and }</h2>
+    <button type="button" onclick="myfunc()">click me</button>
+
+    <h2>JavaScript Statements</h2>
+    <p>In HTML, JavaScript statements are executed by the browser.</p>
+    <p id="demo"></p>
+
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+    <script>
+      function myfunc() {
+        document.getElementById("demo1").innerHTML =
+          "Hello everyone.How are you?";
+        document.getElementById("demo2").innerHTML = "I am Pallab Majumdar";
+      }
+      
+      document.getElementById("demo").innerHTML = "Hello world";
+    </script>
+  </body>
+</html>
