@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>JavaScript Promise</h2>
+
+    <p id="demo"></p>
+    <script>
+        function display(val) {
+            document.getElementById("demo").innerHTML = val;
+        }
+        let p = new Promise(function (resolve, reject) {
+            let x = 4;
+            if (x == 0)
+                resolve("OK!");
+            else
+                reject("Error");
+        });
+
+        p.then(
+            function (value) { display(value); },
+            function (error) { display(error); }
+        )
+
+        let promise = new Promise(function (resolve, reject) {
+            console.log("Promise is pending");
+            setTimeout(() => {
+                resolve(true)
+            }, 5000)
+        });
+        let promise1 = new Promise(function (resolve, reject) {
+            console.log("Promise is pending");
+            setTimeout(() => {
+                reject(new Error("I am an error"))
+            }, 5000)
+
+        });
+        promise.then((value) => {
+            console.log(value)
+        })
+        promise1.catch((error) => {
+            console.log("some error happened")
+        })
+    </script>
+
+</body>
+
+</html>
